@@ -1,0 +1,60 @@
+﻿# A5:ER FORMAT:08
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright (C)2007 m.matsubara
+# A5:SQL Mk-2 Copyright (C)1997 m.matsubara
+#  http://www.wind.sannet.ne.jp/m_matsu/developer/a5m2/
+
+[Manager]
+ProjectName=dfsample
+Author=
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",4,"A4Landscape"
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=4
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=8
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=6
+RDBMSTypeName=PostgreSQL
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+ShowTag=1
+
+[Entity]
+PName=my_table
+LName=
+Comment=
+TableOption=
+Page=MAIN
+Left=100
+Top=100
+Field="id","id","serial","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ユーザ名","user_name","@VARCHAR(100)",,,"","",$FFFFFFFF,""
+Field="年齢","age","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="出欠フラグ","registered_flag","@CHAR(1)","NOT NULL",,"","1:出欠、0:欠席",$FFFFFFFF,""
+Field="作成日時","created_datetime","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成ユーザ","created_user","@VARCHAR(100)","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日時","updated_datetime","@DATETIME",,,"","",$FFFFFFFF,""
+Field="更新ユーザ","updated_user","@VARCHAR(100)",,,"","",$FFFFFFFF,""
+Field="排他制御用項目","version_no","@INT","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20140210131543
+Position="MAIN",100,100

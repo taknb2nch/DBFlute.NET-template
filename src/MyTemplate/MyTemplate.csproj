@@ -1,0 +1,301 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4AFB0536-0503-4003-BF01-8B48A6FD7C29}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aaa.Bbb.Ccc</RootNamespace>
+    <AssemblyName>MySample</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AppConfig>App_Debug.config</AppConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AppConfig>App_Release.config</AppConfig>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.DynamicProxy, Version=1.1.5.0, Culture=neutral, PublicKeyToken=f362209d9bee91d8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Castle.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.0.11.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Seasar, Version=1.3.19.0, Culture=neutral, PublicKeyToken=1d0d0c484d50ca62, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Seasar.dll</HintPath>
+    </Reference>
+    <Reference Include="Seasar.Dao, Version=1.3.19.0, Culture=neutral, PublicKeyToken=73a7c921d802e17e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Seasar.Dao.dll</HintPath>
+    </Reference>
+    <Reference Include="Seasar.DynamicProxy, Version=1.3.19.0, Culture=neutral, PublicKeyToken=1d0d0c484d50ca62, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Seasar.DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Seasar.Quill, Version=1.3.19.0, Culture=neutral, PublicKeyToken=1d0d0c484d50ca62, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Seasar.Quill.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientSession.cs" />
+    <Compile Include="DBFlute\AllCommon\AccessContext.cs" />
+    <Compile Include="DBFlute\AllCommon\Ado\CursorHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\Ado\LatestSqlProvider.cs" />
+    <Compile Include="DBFlute\AllCommon\Ado\SqlLogHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\Ado\SqlResultHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\Ado\SqlResultInfo.cs" />
+    <Compile Include="DBFlute\AllCommon\Ado\StatementConfig.cs" />
+    <Compile Include="DBFlute\AllCommon\Annotation\OutsideSql.cs" />
+    <Compile Include="DBFlute\AllCommon\BehaviorSelector.cs" />
+    <Compile Include="DBFlute\AllCommon\Bhv\AbstractBehaviorReadable.cs" />
+    <Compile Include="DBFlute\AllCommon\Bhv\AbstractBehaviorWritable.cs" />
+    <Compile Include="DBFlute\AllCommon\Bhv\BehaviorReadable.cs" />
+    <Compile Include="DBFlute\AllCommon\Bhv\BehaviorWritable.cs" />
+    <Compile Include="DBFlute\AllCommon\Bhv\Load\LoadReferrerOption.cs" />
+    <Compile Include="DBFlute\AllCommon\Bhv\Setup\ConditionBeanSetupper.cs" />
+    <Compile Include="DBFlute\AllCommon\Bhv\Setup\EntityListSetupper.cs" />
+    <Compile Include="DBFlute\AllCommon\CacheBehaviorSelector.cs" />
+    <Compile Include="DBFlute\AllCommon\CacheDaoSelector.cs" />
+    <Compile Include="DBFlute\AllCommon\CallbackContext.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\AbstractConditionBean.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\AbstractConditionQuery.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CHelper\HpFixedConditionQueryResolver.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CKey\ConditionKey.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CKey\ConditionKeyEqual.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CKey\ConditionKeyGreaterEqual.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CKey\ConditionKeyGreaterThan.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CKey\ConditionKeyInScope.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CKey\ConditionKeyIsNotNull.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CKey\ConditionKeyIsNull.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CKey\ConditionKeyLessEqual.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CKey\ConditionKeyLessThan.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CKey\ConditionKeyLikeSearch.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CKey\ConditionKeyNotEqual.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CKey\ConditionKeyNotEqualStandard.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CKey\ConditionKeyNotEqualTradition.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CKey\ConditionKeyNotInScope.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CKey\ConditionKeyNotLikeSearch.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CKey\ConditionKeyPrefixSearch.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\ConditionBean.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\ConditionBeanContext.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\ConditionQuery.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\COption\ConditionOption.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\COption\DateFromToOption.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\COption\FromToOption.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\COption\LikeSearchOption.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\COption\SimpleStringOption.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\CValue\ConditionValue.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\FetchNarrowingBean.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\FetchNarrowingBeanContext.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\Grouping\GroupingOption.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\Grouping\GroupingRowEndDeterminer.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\Grouping\GroupingRowResource.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\Grouping\GroupingRowSetupper.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\ListResultBean.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\MapParameterBean.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\Mapping\EntityDtoMapper.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\OrderByBean.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\OrQuery.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\OutsideSql\Executor\OutsideSqlBasicExecutor.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\OutsideSql\Executor\OutsideSqlCursorExecutor.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\OutsideSql\Executor\OutsideSqlEntityExecutor.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\OutsideSql\Executor\OutsideSqlPagingExecutor.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\OutsideSql\OutsideSqlContext.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\OutsideSql\OutsideSqlDao.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\OutsideSql\OutsideSqlOption.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\OutsideSql\ProcedurePmb.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\PageNavi\Group\PageGroupBean.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\PageNavi\Group\PageGroupOption.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\PageNavi\PageNumberLink.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\PageNavi\PageNumberLinkSetupper.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\PageNavi\Range\PageRangeBean.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\PageNavi\Range\PageRangeOption.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\PagingBean.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\PagingHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\PagingInvoker.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\PagingResultBean.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\ResultBeanBuilder.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\ScalarQuery.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SClause\AbstractSqlClause.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SClause\OrderByClause.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SClause\OrderByElement.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SClause\SqlClause.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SClause\SqlClauseDb2.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SClause\SqlClauseDefault.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SClause\SqlClauseDerby.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SClause\SqlClauseFirebird.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SClause\SqlClauseH2.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SClause\SqlClauseInterbase.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SClause\SqlClauseMsAccess.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SClause\SqlClauseMySql.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SClause\SqlClauseOracle.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SClause\SqlClausePostgreSql.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SClause\SqlClauseSqlite.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SClause\SqlClauseSqlServer.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SelectResource.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SimplePagingBean.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SpecifyQuery.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\SubQuery.cs" />
+    <Compile Include="DBFlute\AllCommon\CBean\UnionQuery.cs" />
+    <Compile Include="DBFlute\AllCommon\CDef.cs" />
+    <Compile Include="DBFlute\AllCommon\DaoReadable.cs" />
+    <Compile Include="DBFlute\AllCommon\DaoSelector.cs" />
+    <Compile Include="DBFlute\AllCommon\DaoWritable.cs" />
+    <Compile Include="DBFlute\AllCommon\DBFluteConfig.cs" />
+    <Compile Include="DBFlute\AllCommon\Dbm\AbstractDBMeta.cs" />
+    <Compile Include="DBFlute\AllCommon\Dbm\DBMeta.cs" />
+    <Compile Include="DBFlute\AllCommon\Dbm\DBMetaInstanceHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\Dbm\Info\ColumnInfo.cs" />
+    <Compile Include="DBFlute\AllCommon\Dbm\Info\ForeignInfo.cs" />
+    <Compile Include="DBFlute\AllCommon\Dbm\Info\ReferrerInfo.cs" />
+    <Compile Include="DBFlute\AllCommon\Dbm\Info\RelationInfo.cs" />
+    <Compile Include="DBFlute\AllCommon\Dbm\Info\UniqueInfo.cs" />
+    <Compile Include="DBFlute\AllCommon\Entity.cs" />
+    <Compile Include="DBFlute\AllCommon\EntityDefinedCommonColumn.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\BatchEntityAlreadyUpdatedException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\BindVariableCommentNotFoundPropertyException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\BindVariableParameterNullValueException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\DangerousResultSizeException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\EmbeddedValueCommentNotFoundPropertyException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\EmbeddedValueParameterNullValueException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\EndCommentNotFoundException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\EntityAlreadyDeletedException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\EntityAlreadyExistsException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\EntityAlreadyUpdatedException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\EntityDuplicatedException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\IfCommentConditionNotFoundException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\IfCommentNotBooleanResultException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\IfCommentWrongExpressionException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\InvalidQueryRegisteredException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\OutsideSqlNotFoundException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\RequiredOptionNotFoundException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\SelectEntityConditionNotFoundException.cs" />
+    <Compile Include="DBFlute\AllCommon\Exp\SQLFailureException.cs" />
+    <Compile Include="DBFlute\AllCommon\Helper\MapListString.cs" />
+    <Compile Include="DBFlute\AllCommon\Helper\MapListStringImpl.cs" />
+    <Compile Include="DBFlute\AllCommon\Helper\MapStringBuilder.cs" />
+    <Compile Include="DBFlute\AllCommon\Helper\MapStringBuilderImpl.cs" />
+    <Compile Include="DBFlute\AllCommon\InternalMapContext.cs" />
+    <Compile Include="DBFlute\AllCommon\JavaLike\JavaBasic.cs" />
+    <Compile Include="DBFlute\AllCommon\JavaLike\JavaCollection.cs" />
+    <Compile Include="DBFlute\AllCommon\JavaLike\JavaException.cs" />
+    <Compile Include="DBFlute\AllCommon\JavaLike\JavaReflection.cs" />
+    <Compile Include="DBFlute\AllCommon\QLog.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\ContextStack.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\FetchNarrowingResultSetFactory.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\FetchNarrowingResultSetWrapper.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\RsHandler\InternalAbstractBeanMetaDataResultSetHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\RsHandler\InternalBeanArrayMetaDataResultSetHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\RsHandler\InternalBeanGenericListMetaDataResultSetHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\RsHandler\InternalBeanListMetaDataResultSetHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlCommand\InternalAbstractAutoStaticCommand.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlCommand\InternalDeleteAutoStaticCommand.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlCommand\InternalDeleteQueryAutoDynamicCommand.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlCommand\InternalInsertAutoDynamicCommand.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlCommand\InternalProcedureCommand.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlCommand\InternalUpdateAutoDynamicCommand.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlCommand\InternalUpdateDynamicCommand.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlCommand\InternalUpdateModifiedOnlyCommand.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlCommand\InternalUpdateQueryAutoDynamicCommand.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlHandler\InternalAbstractAutoHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlHandler\InternalBasicHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlHandler\InternalBasicSelectHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlHandler\InternalBasicUpdateHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlHandler\InternalCommandContextHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlHandler\InternalDeleteAutoHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlHandler\InternalInsertAutoHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlHandler\InternalProcedureHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlHandler\InternalUpdateAutoHandler.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlLog\InternalSqlLog.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlLog\InternalSqlLogRegistry.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlLog\InternalSqlLogRegistryLocator.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlParser\InternalCommandContextCreator.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlParser\InternalSqlParser.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\SqlParser\InternalSqlTokenizer.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\Util\InternalBindVariableUtil.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\Internal\ValueType\Plugin\AnsiStringType.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\S2DaoInterceptor.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\S2DaoMetaDataExtension.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\S2DaoMetaDataFactoryImpl.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\S2DaoSelectDynamicCommand.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\S2DaoSetting.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\SqlLogRegistryLatestSqlProvider.cs" />
+    <Compile Include="DBFlute\AllCommon\S2Dao\TxSetting.cs" />
+    <Compile Include="DBFlute\AllCommon\Util\DfCollectionUtil.cs" />
+    <Compile Include="DBFlute\AllCommon\Util\DfStringUtil.cs" />
+    <Compile Include="DBFlute\AllCommon\Util\DfSystemUtil.cs" />
+    <Compile Include="DBFlute\AllCommon\Util\SimpleAssertUtil.cs" />
+    <Compile Include="DBFlute\AllCommon\Util\SimpleStringUtil.cs" />
+    <Compile Include="DBFlute\AllCommon\Util\SimpleSystemUtil.cs" />
+    <Compile Include="DBFlute\AllCommon\Util\TraceViewUtil.cs" />
+    <Compile Include="DBFlute\AllCommon\XLog.cs" />
+    <Compile Include="DBFlute\BsBhv\BsMyTableBhv.cs" />
+    <Compile Include="DBFlute\BsDao\BsMyTableDao.cs" />
+    <Compile Include="DBFlute\BsDao\PmBean\BsMyTableExPmb.cs" />
+    <Compile Include="DBFlute\BsEntity\BsMyTable.cs" />
+    <Compile Include="DBFlute\BsEntity\Customize\BsMyTableEx.cs" />
+    <Compile Include="DBFlute\BsEntity\Customize\Dbm\MyTableExDbm.cs" />
+    <Compile Include="DBFlute\BsEntity\Dbm\MyTableDbm.cs" />
+    <Compile Include="DBFlute\CBean\BS\BsMyTableCB.cs" />
+    <Compile Include="DBFlute\CBean\CQ\BS\AbstractBsMyTableCQ.cs" />
+    <Compile Include="DBFlute\CBean\CQ\BS\BsMyTableCQ.cs" />
+    <Compile Include="DBFlute\CBean\CQ\Ciq\MyTableCIQ.cs" />
+    <Compile Include="DBFlute\CBean\CQ\MyTableCQ.cs" />
+    <Compile Include="DBFlute\CBean\MyTableCB.cs" />
+    <Compile Include="DBFlute\CBean\Nss\MyTableNss.cs" />
+    <Compile Include="DBFlute\ExBhv\MyTableBhv.cs" />
+    <Compile Include="DBFlute\ExDao\MyTableDao.cs" />
+    <Compile Include="DBFlute\ExDao\PmBean\MyTableExPmb.cs" />
+    <Compile Include="DBFlute\ExEntity\Customize\MyTableEx.cs" />
+    <Compile Include="DBFlute\ExEntity\MyTable.cs" />
+    <Compile Include="Interceptor\AccessContextInterceptor.cs" />
+    <Compile Include="Logic\myLogic.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Debug.config" />
+    <None Include="App_Release.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DBFlute\ExBhv\MyTableBhv_selectMyTableEx.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
